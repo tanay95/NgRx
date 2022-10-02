@@ -1,0 +1,7 @@
+
+<form>
+<input type="text" placeholder="Add new to task" [(ngModel)]="newToDo" [ngModelOptions]="{standalone: true}"/>
+<button type="submit" (click)="addTodo()" >Add</button>
+</form>
+<app-todo *ngFor="let todo of todos$ | async" [todo]="todo" (onRemoveTodo)="remove($event)"
+    (onToggleTodo)="toggle($event)"></app-todo>

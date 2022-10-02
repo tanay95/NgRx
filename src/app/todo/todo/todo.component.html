@@ -1,0 +1,9 @@
+<div [ngClass]="{'not-todo': !todo.status}" *ngIf="!!todo">
+   <div class="row">
+    <span> {{todo.description}}</span>
+    <div>
+        <button (click)="removeTodo()">Delete</button>
+        <button (click)="toggleTodo()">Toggle</button>
+    </div>
+</div>
+</div>
