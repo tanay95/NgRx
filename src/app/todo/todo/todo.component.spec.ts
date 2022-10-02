@@ -22,4 +22,20 @@ describe('TodoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should remove to do list item',() => {
+    spyOn(component.onRemoveTodo,'emit');
+    component.todo = {id:"1",description:"test",status:false}
+    component.removeTodo();
+
+    expect(component.onRemoveTodo.emit).toHaveBeenCalledWith("1");
+  })
+
+  it('should toggle list element in to do list',() => {
+    spyOn(component.onToggleTodo,'emit');
+    component.todo = {id:"1",description:"test",status:false}
+    component.toggleTodo();
+    expect(component.onToggleTodo.emit).toHaveBeenCalledWith('1');
+  })
+  
 });

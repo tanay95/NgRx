@@ -14,7 +14,7 @@ export class TodolistComponent implements OnInit {
   newToDo: string = '';
   todos$: Observable<ReadonlyArray<todo>> | undefined;
 
-  constructor(private store: Store) {
+  constructor(public store: Store) {
   }
 
   ngOnInit(): void {
